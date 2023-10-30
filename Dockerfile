@@ -13,11 +13,13 @@ WORKDIR /usr/bin
 RUN  wget https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/117.0.5938.88/linux64/chromedriver-linux64.zip
 RUN pwd
 RUN  unzip chromedriver-linux64.zip -d /usr/bin
+RUN  mv chromedriver-linux64/chromedriver /usr/bin/chromedriver
 RUN pwd
 RUN ls
-RUN cd /
 
-RUN  curl https://intoli.com/install-google-chrome.sh | bash
+# install headless chrome
+RUN curl -O  https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
+RUN yum install google-chrome-stable_current_x86_64.rpm -y
 RUN  mv /usr/bin/google-chrome-stable /usr/bin/google-chrome
 
 
