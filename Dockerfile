@@ -38,16 +38,16 @@ WORKDIR /
 RUN python3 -m venv /automation_Robot_app 
 RUN source /automation_Robot_app/bin/activate
 
-
+RUN pwd
 #installing pip
 RUN yum install python3-pip
 RUN python3 -m pip install --upgrade pip
 RUN pip install robotframework==5
+RUN pip install wheel==0.41.0
 RUN pip install robotframework-ride==2.0.6
 RUN pip install robotframework-selenium2library==3.0.0
 RUN pip install robotframework-seleniumlibrary==6.1.0
 RUN pip install selenium==4.9.0
-RUN pip install wheel==0.41.0
 RUN pip install setuptools==47.1.0
 
 #SSM
