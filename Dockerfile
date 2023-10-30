@@ -9,12 +9,13 @@ LABEL org.label-schema.schema-version=1.0 org.label-schema.name="CentOS Base"
  RUN yum install unzip -y
 
 #downloading and installating chrome driver and browser
-RUN cd usr/bin
+RUN cd /usr/bin
 RUN  wget https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/117.0.5938.88/linux64/chromedriver-linux64.zip
-RUN  unzip chromedriver-linux64.zip
+RUN pwd
+RUN  unzip chromedriver-linux64.zip 
 RUN cd chromedriver-linux64
 RUN pwd
-RUN LS
+RUN ls
 RUN  mv chromedriver /usr/bin
 RUN cd /
 
