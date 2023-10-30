@@ -7,6 +7,8 @@ CMD ["echo" , "Hello World"]
  RUN yum -y install epel-release
  RUN yum -y update
  RUN yum install wget -y
+ RUN yum install unzip -y
+
 
 #downloading and installating chrome driver and browser
 RUN cd usr/bin
