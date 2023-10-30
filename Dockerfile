@@ -44,7 +44,7 @@ RUN yum install python3-pip
 RUN python3 -m pip install --upgrade pip 
 RUN pip install robotframework==5
 RUN pip install wheel==0.37.0 
-RUN pip install --no-fail-fast robotframework-ride==2.0.6 
+RUN pip install robotframework-ride==2.0.6 
 RUN pip install robotframework-selenium2library==3.0.0 
 RUN pip install robotframework-seleniumlibrary==6.1.0 
 RUN pip install selenium==4.9.0 
