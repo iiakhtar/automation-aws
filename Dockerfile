@@ -2,7 +2,6 @@ FROM centos:7
 
 LABEL org.label-schema.schema-version=1.0 org.label-schema.name="CentOS Base"
 
-RUN CMD ["echo" , "Hello World"]
 
  RUN yum -y install epel-release
  RUN yum -y update
@@ -15,6 +14,7 @@ RUN  wget https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/117.0.5938
 RUN  unzip chromedriver-linux64.zip
 RUN cd chromedriver-linux64
 RUN pwd
+RUN LS
 RUN  mv chromedriver /usr/bin
 RUN cd /
 
