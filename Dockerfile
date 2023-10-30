@@ -29,7 +29,7 @@ RUN  mv /usr/bin/google-chrome-stable /usr/bin/google-chrome
 RUN mkdir temp
 
 #virtual env pip
-RUN yum install https://repo.ius.io/ius-release-el$(rpm -E '%{rhel}').rpm
+#RUN yum install https://repo.ius.io/ius-release-el$(rpm -E '%{rhel}').rpm
 RUN yum update -y
 RUN yum install -y python3
 
