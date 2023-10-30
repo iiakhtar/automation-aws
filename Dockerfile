@@ -34,8 +34,9 @@ RUN yum update -y
 RUN yum install -y python3
 
 #setting python environment
+WORKDIR /
 RUN python3 -m venv /automation_Robot_app 
-RUN source automation_Robot_app/bin/activate
+RUN source /automation_Robot_app/bin/activate
 
 
 #installing pip
@@ -54,9 +55,9 @@ RUN yum install -y -d0 -e0 https://s3.amazonaws.com/ec2-downloads-windows/SSMAge
 RUN systemctl start amazon-ssm-agent
 
 #copy file from S3 bucket to ec2
-RUN aws s3 cp s3://tf-rf-scripts-spe-qaqc-bucket/scripts/TestSuite.robot testsuite.robot
-RUN aws s3 cp s3://tf-rf-scripts-spe-qaqc-bucket/scripts/aut-rf-spt temp --recursive
+#RUN aws s3 cp s3://tf-rf-scripts-spe-qaqc-bucket/scripts/TestSuite.robot testsuite.robot
+#RUN aws s3 cp s3://tf-rf-scripts-spe-qaqc-bucket/scripts/aut-rf-spt temp --recursive
 #Robot Specific
-RUN mkdir /robot
-RUN mkdir /results
-ENTRYPOINT ["robot"]
+#RUN mkdir /robot
+#RUN mkdir /results
+#ENTRYPOINT ["robot"]
