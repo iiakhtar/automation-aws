@@ -9,14 +9,12 @@ LABEL org.label-schema.schema-version=1.0 org.label-schema.name="CentOS Base"
  RUN yum install unzip -y
 
 #downloading and installating chrome driver and browser
-RUN cd /usr/bin
+WORKDIR /usr/bin
 RUN  wget https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/117.0.5938.88/linux64/chromedriver-linux64.zip
 RUN pwd
-RUN  unzip chromedriver-linux64.zip 
-RUN cd chromedriver-linux64
+RUN  unzip chromedriver-linux64.zip -d /usr/bin
 RUN pwd
 RUN ls
-RUN  mv chromedriver /usr/bin
 RUN cd /
 
 RUN  curl https://intoli.com/install-google-chrome.sh | bash
