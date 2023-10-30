@@ -1,5 +1,7 @@
 FROM centos:7
 
+LABEL org.label-schema.schema-version=1.0 org.label-schema.name="CentOS Base"
+
 CMD ["echo" , "Hello World"]
 
  RUN yum -y install epel-release
@@ -8,14 +10,14 @@ CMD ["echo" , "Hello World"]
 
 #downloading and installating chrome driver and browser
 RUN cd usr/bin
-RUN sudo wget https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/117.0.5938.88/linux64/chromedriver-linux64.zip
-RUN sudo unzip chromedriver-linux64.zip
+RUN  wget https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/117.0.5938.88/linux64/chromedriver-linux64.zip
+RUN  unzip chromedriver-linux64.zip
 RUN cd chromedriver-linux64
-RUN sudo mv chromedriver /usr/bin/chromedriver
+RUN  mv chromedriver /usr/bin/chromedriver
 RUN cd /
 
-RUN sudo curl https://intoli.com/install-google-chrome.sh | bash
-RUN sudo mv /usr/bin/google-chrome-stable /usr/bin/google-chrome
+RUN  curl https://intoli.com/install-google-chrome.sh | bash
+RUN  mv /usr/bin/google-chrome-stable /usr/bin/google-chrome
 
 
 #mkdir tf_automation
