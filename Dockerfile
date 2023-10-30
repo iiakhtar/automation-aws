@@ -41,7 +41,6 @@ WORKDIR /automation_Robot_app
 RUN pwd
 #installing pip
 RUN yum install python3-pip
--no-fail-fast
 RUN python3 -m pip install --upgrade pip 
 RUN pip install robotframework==5
 RUN pip install wheel==0.37.0 
