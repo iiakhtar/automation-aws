@@ -14,18 +14,12 @@ RUN  wget https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/117.0.5938
 RUN pwd
 RUN  unzip chromedriver-linux64.zip -d /usr/bin
 RUN  mv chromedriver-linux64/chromedriver /usr/bin/chromedriver
-RUN pwd
-RUN ls
 
 # install headless chrome
 RUN curl -O  https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
 RUN yum install google-chrome-stable_current_x86_64.rpm -y
 RUN  mv /usr/bin/google-chrome-stable /usr/bin/google-chrome
 
-
-#mkdir tf_automation
-
-#cd tmp
 RUN mkdir temp
 
 #virtual env pip
@@ -34,9 +28,9 @@ RUN yum update -y
 RUN yum install -y python3
 
 #setting python environment
-
 RUN python3 -m venv /automation_Robot_app 
 RUN source /automation_Robot_app/bin/activate
+
 WORKDIR /automation_Robot_app
 RUN pwd
 #installing pip
@@ -46,8 +40,8 @@ RUN pip install robotframework==5
 RUN pip install wheel==0.37.0 
 #RUN pip install robotframework-ride==2.0.6 
 RUN pip install robotframework-selenium2library==3.0.0 
-#RUN pip install robotframework-seleniumlibrary==6.1.3
-RUN pip install selenium==4.9.0 
+RUN pip install robotframework-seleniumlibrary==5.1.3
+RUN pip install selenium==3.141.0 
 RUN pip install setuptools==47.1.0 
 
 #SSM
