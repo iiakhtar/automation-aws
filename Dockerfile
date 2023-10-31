@@ -46,7 +46,7 @@ RUN pip install robotframework==5
 RUN pip install wheel==0.37.0 
 #RUN pip install robotframework-ride==2.0.6 
 RUN pip install robotframework-selenium2library==3.0.0 
-RUN pip install robotframework-seleniumlibrary== 3.141.0
+RUN pip install robotframework-seleniumlibrary== 6.1.3
 RUN pip install selenium==4.9.0 
 RUN pip install setuptools==47.1.0 
 
