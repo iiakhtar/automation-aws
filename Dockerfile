@@ -14,6 +14,8 @@ RUN  wget https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/117.0.5938
 RUN pwd
 RUN  unzip chromedriver-linux64.zip -d /usr/bin
 RUN  mv chromedriver-linux64/chromedriver /usr/bin/chromedriver
+RUN chmod +x /usr/bin/chromedriver
+
 
 # install headless chrome
 RUN curl -O  https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
