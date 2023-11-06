@@ -2,24 +2,15 @@ FROM centos:7
 
 LABEL org.label-schema.schema-version=1.0 org.label-schema.name="CentOS Base"
 
-RUN yum -y install epel-release
-RUN yum -y update
-RUN yum install wget -y
-RUN yum install unzip -y
+RUN yum -y install epel-release update wget unzip
 
 #downloading and installating chrome driver and browser
 WORKDIR /usr/bin
 
-#RUN  wget https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/119.0.6045.105/linux64/chromedriver-linux64.zip
-#RUN  unzip chromedriver-linux64.zip -d /usr/bin
-#RUN  mv chromedriver-linux64/chromedriver /usr/bin/chromedriver
-#RUN chmod +x /usr/bin/chromedriver
-
-#download chrome driver --not tested
-RUN CHROME_DRIVER_VERSION=`curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE` && \
-wget https://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip && \
-unzip chromedriver_linux64.zip -d /usr/bin && \
-chmod +x /usr/bin/chromedriver && \rm chromedriver_linux64.zip
+RUN  wget https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/119.0.6045.105/linux64/chromedriver-linux64.zip
+RUN  unzip chromedriver-linux64.zip -d /usr/bin
+RUN  mv chromedriver-linux64/chromedriver /usr/bin/chromedriver
+RUN chmod +x /usr/bin/chromedriver
  
 # install headless chrome
 RUN curl -O  https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
