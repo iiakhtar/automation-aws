@@ -2,7 +2,7 @@ FROM centos:7
 
 LABEL org.label-schema.schema-version=1.0 org.label-schema.name="CentOS Base"
 
-RUN yum -y install epel-release update wget unzip
+RUN yum -y install epel-release update wget unzip git
 
 #downloading and installating chrome driver and browser
 WORKDIR /usr/bin
@@ -31,6 +31,8 @@ RUN python3 -m venv /automation_Robot_app
 RUN source /automation_Robot_app/bin/activate
 
 WORKDIR /automation_Robot_app
+COPY script.sh .
+RUN chmod +x script.sh
 #installing pip
 RUN yum install python3-pip
 RUN python3 -m pip install --upgrade pip 
@@ -41,11 +43,9 @@ RUN pip install robotframework-selenium2library==3.0.0
 RUN pip install robotframework-seleniumlibrary==5.1.3
 RUN pip install selenium==3.141.0 
 RUN pip install setuptools==47.1.0 
-
-
 # Install anything. The service you want to start must be a SystemD service.
 
-CMD ["robot", "--outputdir tmp", "/tmp/aut-rf-jeopardy4/JEOPARDY/TestCases/About/About.robot"]
+CMD ["sh", "script.sh"]
 #SSM
 #RUN yum install -y -d0 -e0 https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/linux_amd64/amazon-ssm-agent.rpm
 #RUN systemctl start amazon-ssm-agent
