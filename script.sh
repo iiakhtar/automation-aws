@@ -1,4 +1,4 @@
-!#/bin/bash
+#!/bin/bash
 mkdir cloneRepos
 cd cloneRepos
 echo "in script file"
