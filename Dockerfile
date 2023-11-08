@@ -21,8 +21,6 @@ RUN  mv /usr/bin/google-chrome-stable /usr/bin/google-chrome
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip && ./aws/install
 
-#virtual env pip
-#RUN yum install https://repo.ius.io/ius-release-el$(rpm -E '%{rhel}').rpm
 RUN yum update -y
 RUN yum install -y python3
 
@@ -43,17 +41,9 @@ RUN pip install robotframework-selenium2library==3.0.0
 RUN pip install robotframework-seleniumlibrary==5.1.3
 RUN pip install selenium==3.141.0 
 RUN pip install setuptools==47.1.0 
-# Install anything. The service you want to start must be a SystemD service.
 
 CMD ["sh", "script.sh"]
-#SSM
-#RUN yum install -y -d0 -e0 https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/linux_amd64/amazon-ssm-agent.rpm
-#RUN systemctl start amazon-ssm-agent
 
 #copy file from S3 bucket to ec2
 #RUN aws s3 cp s3://tf-rf-scripts-spe-qaqc-bucket/scripts/TestSuite.robot testsuite.robot
 #RUN aws s3 cp s3://tf-rf-scripts-spe-qaqc-bucket/scripts/aut-rf-spt temp --recursive
-#Robot Specific
-#RUN mkdir /robot
-#RUN mkdir /results
-#ENTRYPOINT ["robot"]

@@ -1,5 +1,5 @@
 !#/bin/bash
 mkdir cloneRepos
 cd cloneRepos
-git clone https://<token?@github.com/<user>/<repo>
-robot --outputdir tmp <path>/<filename>.robot
+git clone https://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@github.com/<user>/iiakhtar/automation-aws
+robot --outputdir tmp /About.robot
