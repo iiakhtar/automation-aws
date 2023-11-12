@@ -29,8 +29,8 @@ RUN python3 -m venv /automation_Robot_app
 RUN source /automation_Robot_app/bin/activate
 
 WORKDIR /automation_Robot_app
-COPY script.sh .
-RUN chmod +x script.sh
+COPY test2.sh .
+RUN chmod +x test2.sh
 #installing pip
 RUN yum install python3-pip
 RUN python3 -m pip install --upgrade pip 
@@ -42,7 +42,7 @@ RUN pip install robotframework-seleniumlibrary==5.1.3
 RUN pip install selenium==3.141.0 
 RUN pip install setuptools==47.1.0 
 
-CMD ["sh", "script.sh"]
+CMD ["sh", "test2.sh"]
 
 #copy file from S3 bucket to ec2
 #RUN aws s3 cp s3://tf-rf-scripts-spe-qaqc-bucket/scripts/TestSuite.robot testsuite.robot
