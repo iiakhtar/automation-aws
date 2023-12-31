@@ -1,2 +1,2 @@
 #automation-aws#
-automation-aws 1
+automation-aws1
